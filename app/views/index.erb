@@ -1,26 +1,30 @@
 
 <h1>Welcome Guerrilla Survey</h1>
 
+<h3>Login</h3>
+
 <form class="nav-signin" method="post" action="/user/login">
   <input type="text" class="signin-form" type="text" name="username" placeholder="username">
   <input type="password" class="signin-form" name="password" placeholder="password">
   <button class="button" type="submit">Sign in</button>     
 </form>
 
+<h3>Sign Up</h3>
+
 <form method="post" action="/user/signup">
   <h4>Username</h4>
-  <input type="text" class="input-block-level-form" type="text" name="username">
+  <input type="text" class="input-block-level-form" type="text" placeholder="username" name="username">
 
   <h4>Email</h4>
-  <input type="text" class="input-block-level-form" type="text" name="email">
+  <input type="text" class="input-block-level-form" type="text" placeholder="email" name="email">
 
   <h4>Password</h4>
-  <input type="password" class="input-block-level-form" name="password">
+  <input type="password" class="input-block-level-form" placeholder="password" name="password">
 
   <p></p>
   <button class="button" type="submit">Sign in</button>
 
-  <p style="color: red"><%= @error %></p>
+  <p style="color: red"><%= @errors %></p>
 </form>
 
 

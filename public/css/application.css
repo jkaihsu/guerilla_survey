@@ -39,3 +39,9 @@ h1 a {
   color: white;
 }
 
+#create_poll_button {
+  display: block;
+  background-color: gray;
+  color: white;
+  height: 15px;
+}

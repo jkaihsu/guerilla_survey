@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_many :surveys
   has_many :votes
 
-  validates :username, :email, :presence => true  
+  validates :username, :email, :password, :presence => true  
   validates :username, :email, :uniqueness => true
   validates :password, :length => { :minimum => 5}
   before_create :hash_password
@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
   include BCrypt
 
-    def valid_email
+  def valid_email
     unless email =~ /\b[A-Z0-9._%a-z\-]+@(?:[A-Z0-9a-z\-]+\.)+[A-Za-z]{2,4}\z/
       errors.add(:email, "Not a valid email, son")
     end
