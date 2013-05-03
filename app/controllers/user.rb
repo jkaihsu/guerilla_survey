@@ -1,34 +1,44 @@
+get '/user/login' do 
+  erb :user_login
+end
+
 get '/user/signup' do 
   erb :user_signup
 end
 
-post '/user/signup' do 
-  @user = User.create(params)
-  session[:id] = @user.id
-  redirect to "/user/#{@user.id}"
+get '/logout' do
+  session.clear
+  redirect '/'
 end
 
-get '/user/login' do 
-  erb :user_login
+post '/user/signup' do 
+  @user = User.new(username: params["username"], email: params["email"], password: params["password"])
+  if @user.valid?
+    @user.save
+    session[:user_id] = @user.id
+    redirect "/user/#{@user.id}"
+  else
+    @error = "Invalid Username/Email/Password"
+    redirect '/'
+  end
 end
 
 post '/user/login' do
   @user = User.authenticate(params["username"], params["password"])
   if @user
     session[:user_id] = @user.id
-    redirect ("/user/#{@user.id}")
+    redirect "/user/#{@user.id}"
   else 
+    @error = "Invalid Login"
     redirect '/'
   end
 end
 
-get '/user/logout' do 
-  clear_session
-  redirect '/'
-end
 
 
 get '/user/:id' do
-  @user = User.find(session[:id])
+  @user = User.find(session[:user_id])
   erb :user_home
 end
+
+

@@ -12,14 +12,14 @@
   <title></title>
 </head>
 <body>
+
   <header>
-    <h1><a href="/"> Guerrilla Surveys </a></h1>
-   
-
-
-
-
-
+    <h1><a href="/"> Guerrilla Surveys </a></h1> 
+    <% if current_user %>
+      <span id="create_poll_button">+ New poll</span>
+      <span><a href="/user/<%= current_user.id%>"> <%= current_user.username %></a><span>
+      <span><a href='/logout'>Logout</a></span>      
+    <% end %>
   </header>
 
   <div class="container">
