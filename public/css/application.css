@@ -4,6 +4,7 @@
   padding: 0 20px 20px 20px;
   border: 1px dotted black;
   margin-top: 100px;
+  height: 2000px;
 }
 
 th {
@@ -11,17 +12,30 @@ th {
 }
 
 header {
-  position: absolute;
+  /*padding: 0;*/
+  position: fixed;
+  top: 0;
   background-color: black;
   color: white;
-  top: 0;
   height: 45px;
   width: 100%;
   margin: 0 auto;
-  line-height: 45px;
 }
 
 body {
+  padding: 0;
   background-color: #f5f5f5;
+}
+
+h1 {
+  text-decoration: none;
+  vertical-align: middle;
+  font-size: 25px;
+  color: white;
+}
+
+h1 a {
+  text-decoration: none;
+  color: white;
 }
 
