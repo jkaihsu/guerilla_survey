@@ -1,21 +1,12 @@
-
-  <h1>Take this Survey</h1>
-  
-  <form method="post" action="/create">
-    <input type="text" name="title" placeholder="Title">
-    <div id="question">
-      <input type="text" name="question1" placeholder="Question 1">
-      <div id="choice">
-        
-        <input type="text" name="question[choices][]" placeholder="Choice 1">
-        <input type="text" name="question[choices][]" placeholder="Choice 2">
-      </div>
-      <button class="add_choice">Add Answer</button>
-      <!-- <input type="hidden" id="counter" value="2" name="counter"> -->
-    </div>
+<h1>Take this Survey</h1>
     
-    
-    <input type="submit" value="Submit">
-  
-  </form>
+<h2><%= @survey.title %></h2>
+<h4><%= @question.text %></h4>
+<form method="post" action="/submit-survey">
 
+<% @choices.each do |choice| %>
+  <label for="<%=choice.id%>"><%= choice.text %></label>
+  <input type="radio" value="<%=choice.id%>" name="choice"> 
+<% end %>
+<input type="submit" value="Vote">
+</form>

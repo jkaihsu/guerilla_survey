@@ -5,5 +5,10 @@ $(document).ready(function() {
         $("#counter").attr("value", numC);
         $("#choice").append("<input type='text' name=question[choices][] placeholder='Choice " + numC + "'>");
     });
+
+    
+
+
+
 });
 

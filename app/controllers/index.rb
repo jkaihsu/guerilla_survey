@@ -27,6 +27,16 @@ get '/survey/:id' do
   p @question
   @choices = @question.choices
 
-  erb :show_survey
+  erb :take_survey
 
 end
+
+post '/submit-survey' do
+  selection =  params.keys[0].to_i
+  choice = Choice.find(selection)
+  question = choice.question_id
+  survey = Question.find(question).survey_id
+  Vote.create(choice_id: selection, survey_id: survey)
+  redirect '/'
+end
+
