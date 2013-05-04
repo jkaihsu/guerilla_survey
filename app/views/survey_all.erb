@@ -9,7 +9,7 @@
 <% @surveys.each do |survey| %>
     <tr>
       <td><a href="/survey/<%= survey.id %>"><%= survey.title %></a></td>
-      <td><a href="/user/<%= survey.user_id %>"><%= User.find(survey.user_id).username %></td>
+      <td><a href="/user/<%= survey.user_id %>"> <%= survey.user_id %> </td>
       <td><%= survey.created_at.strftime('%m/%d/%Y') %></td>
       <td id="vote_count"><%= survey.votes.count %></td>
     </tr>

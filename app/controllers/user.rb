@@ -34,8 +34,6 @@ post '/user/login' do
   end
 end
 
-
-
 get '/user/:id' do
   @user = User.find(params[:id])
   # @surveys =  Survey.where("user_id = ?", @user.id)
@@ -44,5 +42,3 @@ get '/user/:id' do
   @survey_ids = @votes_surveys.map { |v| v.survey_id }
   erb :user_home
 end
-
-

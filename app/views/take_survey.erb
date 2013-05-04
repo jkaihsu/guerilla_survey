@@ -2,7 +2,7 @@
     
 <h2><%= @survey.title %></h2>
 <h4><%= @question.text %></h4>
-<form method="post" action="/submit-survey">
+<form method="post" action="/survey/<%=@survey.id%>">
 
 <% @choices.each do |choice| %>
   <label for="<%=choice.id%>"><%= choice.text %></label>

@@ -1,6 +1,7 @@
 $(document).ready(function() {
     $("form").on("submit",function(){
-        $(this).serialize();
+        console.log($(this).serialize());
+        // $.post()
     });
 
 
