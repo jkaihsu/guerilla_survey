@@ -11,4 +11,9 @@ end
 
 
 
+get '/survey/:id' do
+  @survey = Survey.find(params[:id])
+  erb :survey_view
+end
+
 

@@ -37,7 +37,7 @@ end
 
 
 get '/user/:id' do
-  @user = User.find(session[:user_id])
+  @user = User.find(params[:id])
   # @surveys =  Survey.where("user_id = ?", @user.id)
   @surveys = Survey.where(user_id: @user.id)
   @votes_surveys = Vote.where(user_id: @user.id).joins(:survey)

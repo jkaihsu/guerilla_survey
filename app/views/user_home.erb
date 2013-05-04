@@ -3,12 +3,16 @@
  <h2><%= @user.username %>'s Surveys</h2>
 
  <% @surveys.each do |survey| %>
-  <%= survey.title %><br/>
+  <a href="/survey/<%= survey.id %>"> 
+    <%= survey.title %><br/>
+  </a>
  <% end %>
 
  <h2>Surveys voted on by <%= @user.username %></h2>
   <% @survey_ids.uniq.each do |id| %>
-    <%= Survey.find(id).title %><br/>
+    <a href="/survey/<%= id %>"> 
+      <%= Survey.find(id).title %><br/>
+    </a>
   <% end %>
 
 

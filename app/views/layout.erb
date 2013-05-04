@@ -4,7 +4,8 @@
   
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/application.css">
-
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300' rel='stylesheet' type='text/css'>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
@@ -14,11 +15,16 @@
 <body>
 
   <header>
-    <h1><a href="/"> Guerrilla Surveys </a></h1> 
+    <span id="logo"><a href="/"> Guerrilla Surveys </a></span> 
     <% if current_user %>
-      <span id="create_poll_button">+ New poll</span>
-      <span><a href="/user/<%= current_user.id%>"> <%= current_user.username %></a><span>
-      <span><a href='/logout'>Logout</a></span>      
+    <div id="nav_links">
+      <div id="create_poll_button">+ New poll</div>
+      
+      <a href="/surveys">View All Surveys</a>
+      
+      <a href="/user/<%= current_user.id%>"> <%= current_user.username %></a>
+      <a href='/logout'>Logout</a>
+    </div>
     <% end %>
   </header>
 

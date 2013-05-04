@@ -2,9 +2,15 @@
   margin: 0 auto;
   width: 600px;
   padding: 0 20px 20px 20px;
-  border: 1px dotted black;
+  border: 1px solid gray;
+  border-radius: 5px;
   margin-top: 100px;
-  height: 2000px;
+  height: 100%;
+  background-color: white; 
+}
+
+a {
+  text-decoration: none;
 }
 
 th {
@@ -13,16 +19,38 @@ th {
 
 header {
   /*padding: 0;*/
+
   position: fixed;
   top: 0;
-  background-color: black;
+  background-color: #009b95;
   color: white;
   height: 45px;
   width: 100%;
   margin: 0 auto;
 }
 
+#logo {
+  font-family: 'Roboto Condensed', sans-serif;
+  padding-left: 45px;
+  font-size: 25px;
+  float: left;
+  /*padding-left: 10px;*/
+  line-height: 45px; /*same header to center*/
+  
+}
+
+#logo a{
+  text-decoration: none;
+  color: white;
+}
+
+#logo a:hover{
+  color: #ff7100;
+}
+
 body {
+  font-size: 13px;
+  font-family: 'Roboto Slab', serif;
   padding: 0;
   background-color: #f5f5f5;
 }
@@ -31,17 +59,74 @@ h1 {
   text-decoration: none;
   vertical-align: middle;
   font-size: 25px;
-  color: white;
+  color: white
+}
+
+h1, h2 {
+  color: #ff7100;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+h3, h4 {
+  color: #778899;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 h1 a {
   text-decoration: none;
   color: white;
+  display: inline;
 }
 
-#create_poll_button {
-  display: block;
-  background-color: gray;
+form h4{
+  padding: 10px 0 5px 0;
+  margin: 0;
+}
+
+
+/*header a {
   color: white;
-  height: 15px;
+  line-height: 45px;
+  float: right;
+}*/
+#create_poll_button {
+  display: inline-block;
+  color: white;
+
+  width: auto;
+  margin-right: 40px;
+
+}
+
+
+#nav_links {
+  padding-right: 25px;
+  color: white;
+  line-height: 45px;
+  float: right;
+  text-decoration: none;
+}
+
+#nav_links a{
+  /*display: inline-block;*/
+  padding-right: 30px;
+  color: white;
+}
+
+#nav_links a:hover{
+  /*display: inline-block;*/
+  color: #ff7100;
+}
+
+#vote_count {
+  text-align: center;
+}
+
+td {
+  padding: 5px;
+}
+
+
+tr:nth-of-type(even) {
+  background-color:#ccc;
 }
