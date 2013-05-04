@@ -1,0 +1,23 @@
+<h2> Survey All </h2>
+<table>
+  <tr>
+    <td>Title</td> 
+    <td>Username</td> 
+    <td>Created at</td> 
+    <td>Vote Count</td> 
+  </tr>
+
+<% @surveys.each do |survey| %>
+
+  
+    <tr>
+      <td><%= survey.title %></td>
+      <td><%= User.find(survey.user_id).username %></td>
+      <td><%= survey.created_at %></td>
+      <td><%= survey.votes.count %></td>
+    </tr>
+  
+
+<% end %>
+
+</table>
