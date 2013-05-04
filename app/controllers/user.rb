@@ -38,6 +38,10 @@ end
 
 get '/user/:id' do
   @user = User.find(session[:user_id])
+  # @surveys =  Survey.where("user_id = ?", @user.id)
+  @surveys = Survey.where(user_id: @user.id)
+  @votes_surveys = Vote.where(user_id: @user.id).joins(:survey)
+  @survey_ids = @votes_surveys.map { |v| v.survey_id }
   erb :user_home
 end
 

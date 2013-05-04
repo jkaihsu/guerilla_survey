@@ -1,11 +1,15 @@
 
- <h2> <%= @user.email %> </h2>
 
- <%= 
+ <h2><%= @user.username %>'s Surveys</h2>
+
+ <% @surveys.each do |survey| %>
+  <%= survey.title %><br/>
+ <% end %>
+
+ <h2>Surveys voted on by <%= @user.username %></h2>
+  <% @survey_ids.uniq.each do |id| %>
+    <%= Survey.find(id).title %><br/>
+  <% end %>
 
 
-
- Survey.where("user_id = ?", @user.id)
-
- @user.id
 

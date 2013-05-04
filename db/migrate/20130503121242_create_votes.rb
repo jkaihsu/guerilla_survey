@@ -5,6 +5,6 @@ class CreateVotes < ActiveRecord::Migration
       t.references :choice
       t.references :survey
     end
-    # add_index :votes, [:user_id, :choice_id]
+    add_index :votes, [:user_id, :choice_id, :survey_id], :uniqueness => true
   end
 end
